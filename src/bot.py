@@ -1,4 +1,5 @@
 import random
+import sys
 
 import toml
 from telegram import Update
@@ -8,7 +9,9 @@ from telegram.ext import Application, CommandHandler, ContextTypes, Conversation
 from . import utils
 from .database import ContactDatabase
 
-db = ContactDatabase()
+config_path = sys.argv[1] if len(sys.argv) > 1 else "config.toml"
+config = toml.load(config_path)
+db = ContactDatabase(config["DATABASE_PATH"])
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -115,7 +118,6 @@ async def connect_db(context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
-    config = toml.load("config.toml")
     app = Application.builder().token(config["TELEGRAM_API_KEY"]).build()
 
     app.add_handler(ConversationHandler(
