@@ -2,7 +2,7 @@ import aiosqlite
 
 
 class ContactDatabase:
-    def __init__(self, db_path="./pseudocontacts.sqlite"):
+    def __init__(self, db_path="./database.sqlite"):
         self.connection = None
         self.db_path = db_path
 
