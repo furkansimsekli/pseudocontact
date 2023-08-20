@@ -1,3 +1,4 @@
+import logging
 import random
 import sys
 
@@ -8,6 +9,10 @@ from telegram.ext import Application, CommandHandler, ContextTypes, Conversation
 
 from . import utils
 from .database import ContactDatabase
+
+# Logging
+logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+logger = logging.getLogger()
 
 config_path = sys.argv[1] if len(sys.argv) > 1 else "config.toml"
 config = toml.load(config_path)
