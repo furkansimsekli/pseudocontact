@@ -23,15 +23,32 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_user.id,
                                    text=f"Welcome to PseudoContact! You can easily store your unnecessary contacts "
                                         f"before deleting them. If they reach you out later on, you won't have a "
-                                        f"problem identifying them ;)\n\n"
-                                        f"You can add new contacts by using /add command"
-                                        f"You can make a query with /find command\n\n"
+                                        f"problem identifying them ;)"
+                                        f"\n\n"
+                                        f"You can add new contacts by using /add command\n"
+                                        f"You can make a query with /find command"
+                                        f"\n\n"
                                         f"Use /help for more details")
 
 
 async def help_(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_user.id,
-                                   text=f"Lorem ipsum")
+                                   text=f"How many times you stuttered when someone you knew called/texted you, but "
+                                        f"you couldn't remember her/his name? Well, PseudoContact will help you for "
+                                        f"that ;)"
+                                        f"\n\n"
+                                        f"You will store your unnecessary contacts here. Whenever someone reaches you "
+                                        f"out, you will quickly see who they are. No need to over populate the list "
+                                        f"of contacts in our phones, right?"
+                                        f"\n\n"
+                                        f"/add - add new pseudocontact, before deleting it from your phone\n"
+                                        f"/all - list of all your pseudocontacts\n"
+                                        f"/find - filter your pseudocontacts by their names or numbers\n"
+                                        f"\n\n"
+                                        f"If you would like to support the developer, you can star the repository on "
+                                        f"<a href='https://github.com/furkansimsekli/pseudocontact'>GitHub</a>.",
+                                   parse_mode=ParseMode.HTML,
+                                   disable_web_page_preview=True)
 
 
 async def get_all_contacts(update: Update, context: ContextTypes.DEFAULT_TYPE):
