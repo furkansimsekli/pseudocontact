@@ -5,8 +5,8 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import Application, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
 
-from .database import ContactDatabase
 from . import utils
+from .database import ContactDatabase
 
 db = ContactDatabase()
 
