@@ -160,7 +160,7 @@ cython_debug/
 .idea/
 
 # App Data
-pseudocontacts.sqlite
+*.sqlite
 
 # App Config
-config.toml
+*.toml
